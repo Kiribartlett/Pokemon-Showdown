@@ -1,8 +1,26 @@
-/config/config.js
-/config/usergroups.csv
+/config/*
+!/config/formats.ts
 /logs/*
+/test/modlogs
 /node_modules
+/eslint-cache
+/server/chat-plugins/private
+/server/chat-plugins/private.js
+/server/chat-plugins/*-private.js
 npm-debug.log
+.eslintcache
+.eslintfullcache
+package-lock.json
+/tools/set-import/sets
+databases/*.db*
+
+# Typescript build artifacts
+.*-dist/
+tools/set-import/importer.js
+tools/modlog/converter.js
+
+# visual studio live share
+.vs
 
 # boilerplate #
 ###############
@@ -11,6 +29,7 @@ npm-debug.log
 
 # editor temp files
 *~
+.idea/
 
 tmp/**/*
 *.lock
@@ -22,7 +41,6 @@ tmp/**/*
 .installed.cfg
 
 downloads
-build
 dist
 
 # egg related
@@ -44,4 +62,3 @@ local_settings.py
 .svn
 
 pip-log.txt
-
