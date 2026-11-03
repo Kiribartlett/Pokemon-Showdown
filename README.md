@@ -1,52 +1,99 @@
-Showdown
+Pokémon Showdown
 ========================================================================
 
-Showdown is a simulator of Pokemon battles. It currently only supports singles battles in Generation 5 (Pokemon Black and Pokemon White).
+Navigation: [Website][1] | **Server repository** | [Client repository][2] | [Dex repository][3]
 
-Installing
+  [1]: http://pokemonshowdown.com/
+  [2]: https://github.com/smogon/pokemon-showdown-client
+  [3]: https://github.com/Zarel/Pokemon-Showdown-Dex
+
+[![Build Status](https://github.com/smogon/pokemon-showdown/workflows/Node.js%20CI/badge.svg)](https://github.com/smogon/pokemon-showdown/actions?query=workflow%3A%22Node.js+CI%22)
+[![Dependency Status](https://img.shields.io/librariesio/github/smogon/pokemon-showdown)](https://libraries.io/github/smogon/pokemon-showdown)
+
+
+Introduction
 ------------------------------------------------------------------------
 
-Showdown requires Node.js and npm (which is installed by default with Node.js since v0.6.3).
+Pokémon Showdown is many things:
 
-Run `npm install` to install all necessary dependencies.
+- A **website** you can use for Pokémon battling
 
-Copy `config/config-example.js` into `config/config.js`, and edit as you please.
+  - http://pokemonshowdown.com/
 
-After this, start Node:
+- A **JavaScript library** for simulating Pokémon battles and getting Pokédex data
 
-	cd <location of PS>
-	node app.js
+  - [sim/README.md](./sim/README.md)
 
-You can also specify a port:
+- Some **command-line tools** for simulating Pokémon battles (which can be used in non-JavaScript programs)
 
-	node app.js 8000
+  - [COMMANDLINE.md](./COMMANDLINE.md)
 
-Visit your server at `http://play.pokemonshowdown.com/~~SERVER:PORT/`
+- A **web API** for the web site for Pokémon battling
 
-Replace `SERVER` with your server domain or IP, and `PORT` with the server's port. You can leave off `:PORT` if it is 8000 (the default).
+  - [pokemon-showdown-client: WEB-API.md](https://github.com/smogon/pokemon-showdown-client/blob/master/WEB-API.md)
 
-Yes, you can test even if you are behind a NAT without port forwarding: `http://play.pokemonshowdown.com/~~localhost/` will connect to your local machine. Some browser setups might prevent this sort of connection, however (NoScript, for instance). If you can't get connecting locally to work in Firefox, try Chrome.
+- A **game server** for hosting your own Pokémon Showdown community and game modes
 
-The reason your server is visited through `play.pokemonshowdown.com` is to make it more difficult for servers to see a user's password in any form, by handling logins globally. I realize that you might want your own login server and client hosted outside the `pokemonshowdown.com` domain, and I'll look more deeply into how to facilitate that when we're closer to leaving beta.
+  - [server/README.md](./server/README.md)
 
-Browser support
+Pokémon Showdown simulates singles, doubles and triples battles in all the games out so far (Generations 1 through 9).
+
+
+Documentation quick links
 ------------------------------------------------------------------------
 
-Showdown currently supports, in order of preference:
+* [PROTOCOL.md][4] - How the client and server communicate with each other.
+* [sim/SIM-PROTOCOL.md][5] - The part of the protocol used for battles and battle messages.
+* [CONTRIBUTING.md][6] - Useful code standards to understand if you want to send pull requests to PS (not necessary if you're just using the code and not planning to contribute back).
+* [ARCHITECTURE.md][7] - A high-level overview of how the code works.
+* [Bot FAQ][8] - An FAQ compiled by Kaiepi regarding making Pokemon Showdown bots - mainly chatbots and battle bots.
 
- - Chrome
- - Firefox 4+
- - Safari
- - Safari for iPhone/iPod/iPad
- - Firefox for Android
- - IE9+
+  [4]: ./PROTOCOL.md
+  [5]: ./sim/SIM-PROTOCOL.md
+  [6]: ./CONTRIBUTING.md
+  [7]: ./ARCHITECTURE.md
+  [8]: https://gist.github.com/Kaiepi/becc5d0ecd576f5e7733b57b4e3fa97e
 
-The built-in Android browser is not supported because of [socket.io bug 651][1], but will be when that bug is fixed. In the meantime, Firefox for Android works.
 
-IE8 has a few teambuilder issues that will be worked out when I have time.
+Community
+------------------------------------------------------------------------
 
-I haven't looked into Opera much, but support for that is planned as long as it doesn't turn out to be too difficult.
+PS has a built-in chat service. Join our main server to talk to us!
 
-As for older browsers (Firefox 3.6, IE7), I won't go out of my way to support them, but if there's a simple fix, you can suggest it to me and I'll implement it.
+You can also visit the [Pokémon Showdown forums][9] for discussion and help.
 
-  [1]: https://github.com/LearnBoost/socket.io/issues/651
+  [9]: https://www.smogon.com/forums/forums/pok%C3%A9mon-showdown.209/
+
+If you'd like to contribute to programming and don't know where to start, feel free to check out [Ideas for New Developers][10].
+
+  [10]: https://github.com/smogon/pokemon-showdown/issues/2444
+
+
+License
+------------------------------------------------------------------------
+
+Pokémon Showdown's server is distributed under the terms of the [MIT License][11].
+
+  [11]: ./LICENSE
+
+
+Credits
+------------------------------------------------------------------------
+
+Owner
+
+- Guangcong Luo [Zarel] - Development, Design, Sysadmin
+
+Staff
+
+- Andrew Werner [HoeenHero] - Development
+- Annika L. [Annika] - Development
+- Chris Monsanto [chaos] - Development, Sysadmin
+- Kris Johnson [dhelmise] - Development
+- Leonard Craft III [DaWoblefet] - Research (game mechanics)
+- Mathieu Dias-Martins [Marty-D] - Research (game mechanics), Development
+- Mia A [Cassiopeia] - Development
+
+Contributors
+
+- See http://pokemonshowdown.com/credits

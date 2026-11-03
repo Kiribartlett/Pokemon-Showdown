@@ -1,8 +1,35 @@
-/config/config.js
-/config/usergroups.csv
-/logs/*
+/config/*
+!/config/formats.ts
+!/config/config-example.js
+/logs/**/*
+/test/modlogs
+/test/replays/*.html
 /node_modules
+/eslint-cache
+/server/chat-plugins/private
+/server/chat-plugins/private.js
+/server/chat-plugins/*-private.js
 npm-debug.log
+.eslintcache
+.eslintcache-no-types
+/tools/set-import/sets
+databases/*.db*
+*.o
+*.o.dSYM
+# Typescript build artifacts
+.*-dist/
+tools/set-import/importer.js
+tools/modlog/converter.js
+*.tsbuildinfo
+**/sourceMaps
+
+!test/**/*.js
+tools/modlog/**/*.js
+tools/set-import/*.js
+!tools/set-import/index.js
+
+# visual studio live share
+.vs
 
 # boilerplate #
 ###############
@@ -11,6 +38,7 @@ npm-debug.log
 
 # editor temp files
 *~
+.idea/
 
 tmp/**/*
 *.lock
@@ -22,7 +50,6 @@ tmp/**/*
 .installed.cfg
 
 downloads
-build
 dist
 
 # egg related
@@ -44,4 +71,5 @@ local_settings.py
 .svn
 
 pip-log.txt
-
+# redis dumps
+*.rdb
